@@ -25,3 +25,5 @@ export const EVERYTHING_URL = `${BASE_URL}/everything?${QUERY_PARAMS.API_KEY}=${
 export const TOP_HEADLINES_URL = `${BASE_URL}top-headlines?${QUERY_PARAMS.API_KEY}=${DEFAULTS.API_KEY}`;
 
 export const FEEDBACK_URL =    /* 'http://localhost:3000' +  */'/feedback';
+
+export const CATEGORY_ICON = category => `assets/categories/${category}.png`;

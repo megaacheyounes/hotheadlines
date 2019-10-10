@@ -5,6 +5,7 @@ import { MediaChange, ObservableMedia } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 import { MatSidenav } from '@angular/material';
 import { CATEGORIES } from 'src/app/config/categories';
+import { CATEGORY_ICON } from 'src/app/config/URLs';
 
 @Component({
   selector: 'app-category',
@@ -50,7 +51,7 @@ export class CategoryComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getIcon(c) {
-    return 'assets/categories' + c + '.png';
+    return CATEGORY_ICON(c);
   }
 
   showNews(c, index) {

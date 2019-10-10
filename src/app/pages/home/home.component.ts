@@ -14,20 +14,17 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   posts$: Subject<any>;
   posts;
-  //images: CarouselCell[] = [];
+
   @ViewChild(PerfectScrollbarDirective) perfectScrollbar?: PerfectScrollbarDirective;
   @ViewChild('mainContent') mainContent;
-  watcher: Subscription;
+
 
   constructor(public newsService: NewsService) { }
 
   ngOnInit() {
 
     this.loadPosts(0);
-    /* this.watcher = this.posts$.subscribe(
-      (posts) => this.setBSImages(posts)
-    );
-     */
+
   }
 
   setBSImages(data) {
@@ -58,7 +55,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy() {
-    this.watcher.unsubscribe();
   }
 
 }

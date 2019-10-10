@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, OnDestroy, AfterViewInit, OnInit } from '@angular/core';
 import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 
@@ -7,10 +7,10 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
 
   watcher: Subscription;
-  activeMediaQuery = '';
+
   @ViewChild('sidenav') sidenav;
   mode = 'side';
 
@@ -18,9 +18,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.watcher = this.media.subscribe((change: MediaChange) => {
-      this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
+      //  this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
       if (change.mqAlias === 'xs' || change.mqAlias === 'sm') {
         this.mode = 'over';
         this.sidenav.close();
@@ -29,6 +29,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
         this.sidenav.open();
       }
     });
+  }
+
+  ngAfterViewInit() {
+
+
   }
 
   ngOnDestroy() {

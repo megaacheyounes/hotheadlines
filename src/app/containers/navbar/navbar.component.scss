@@ -1,3 +1,5 @@
+$logo_width : 256px;
+
 .side-panel {
   position: fixed;
   left: 0px;
@@ -16,7 +18,7 @@
 
 
 .logo {
-  width: 256px;
+  width: $logo_width;
   object-fit: cover;
 }
 
