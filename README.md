@@ -11,4 +11,4 @@ Rename .env.example to .env, and add your own information
 ####This project was built for educational purposes only.
 
 The project was released under the apache 2.0 licence
-https://git.heroku.com/hotheadlines.git
+
