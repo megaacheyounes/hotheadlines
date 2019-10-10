@@ -1,0 +1,24 @@
+ Feedback
+
+ <div fxLayout="column">
+
+   <mat-form-field>
+     <input type="text" matInput placeholder='subject' [(ngModel)]="model.subject">
+   </mat-form-field>
+
+   <mat-form-field>
+     <input matInput placeholder="Enter your email" [(ngModel)]="model.email" [formControl]="email" required>
+     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+   </mat-form-field>
+
+   <mat-form-field>
+     <textarea matInput maxlength="400" [(ngModel)]="model.message" placeholder="message"></textarea>
+   </mat-form-field>
+
+   <button mat-button color="primary" (click)="send(null)">
+     <mat-icon>send</mat-icon>
+     send
+   </button>
+ </div>
+ <hr>
+ <p>we will email you back if necessary</p>

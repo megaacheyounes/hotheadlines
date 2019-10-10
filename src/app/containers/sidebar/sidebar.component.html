@@ -1,0 +1,51 @@
+<div fxFlexFill fxLayout="column" class="pad-8 ">
+
+
+  <mat-list [routerLinkActiveOptions]="{exact: true}">
+    <mat-list-item color="accent" mat-button class="clickable nav-item " [routerLink]="['/trending']"
+      routerLinkActive='active'>trending news</mat-list-item>
+
+    <mat-list-item class="clickable nav-item" [routerLink]="['/latest']" routerLinkActive='active'>latest news
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="['/local']" class="nav-item clickable" routerLinkActive='active'>news by countries
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="['/special']" class="nav-item clickable" routerLinkActive='active'>news by category
+    </mat-list-item>
+
+  </mat-list>
+
+  <div fxFlex></div>
+
+  <div fxLayout="row">
+    <div fxFLex></div>
+    <button mat-icon-button (click)="facebook() ">
+      <span class="fa fa-lg fa-facebook"></span>
+    </button>
+
+    <button mat-icon-button (click)="twitter()">
+      <span class="fa fa-lg fa-twitter"></span>
+    </button>
+
+    <button mat-icon-button (click)="feedback()">
+      <mat-icon>feedback</mat-icon>
+    </button>
+    <div fxFLex></div>
+  </div>
+
+  <div>
+    <p>news provided by
+      <a href="https://newsapi.org">
+        <strong>
+          newsapi.org
+        </strong>
+      </a>
+    </p>
+  </div>
+  <small>
+
+    <a [href]="personalWebsite">Younes Megaache</a>
+  </small>
+
+</div>

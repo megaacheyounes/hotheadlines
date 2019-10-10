@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+$app-primary: mat-palette($mat-grey);
+$app-accent: mat-palette($mat-light-blue);
+$app-warn: mat-palette($mat-pink);
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+@include mat-core();
+$primary: mat-palette($mat-deep-orange, 500);
+$accent: mat-palette($mat-purple, 500);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+.clickable {
+  cursor: pointer;
+}
+
+.bg {
+  background: #f5f5f5;
+}
+
+.box {
+  border: 1px red solid;
+}
+
+.top {
+  z-index: 999;
+}

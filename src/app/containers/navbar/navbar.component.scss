@@ -1,0 +1,25 @@
+.side-panel {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.active {
+  border-bottom: 2px solid white;
+  transition: 500ms all;
+
+  :hover {
+    border-bottom: 2px solid gray;
+  }
+
+}
+
+
+.logo {
+  width: 256px;
+  object-fit: cover;
+}
+
+.absolute {
+  position: absolute;
+}

@@ -1,4 +1,4 @@
-#Hot headlines  
+#[Hot headlines](http://megaache-younes.herokuapp.com/)  
 News Website built on top of the MEAN stack, powered by newsapi.org.    
 
 ######After cloning, Add your newsapi.org's api key to the environment file at src/environments 
@@ -11,3 +11,4 @@ Rename .env.example to .env, and add your own information
 ####This project was built for educational purposes only.
 
 The project was released under the apache 2.0 licence
+https://git.heroku.com/hotheadlines.git

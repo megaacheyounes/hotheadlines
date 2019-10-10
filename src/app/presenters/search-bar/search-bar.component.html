@@ -1,0 +1,9 @@
+<mat-form-field floatLabel="never" fxFlexFill>
+  <mat-icon style="font-size:20px" matprefix>search</mat-icon>
+
+  <input matInput (keyup.enter)="search()" [(ngModel)]="query">
+
+  <button mat-button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="query=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

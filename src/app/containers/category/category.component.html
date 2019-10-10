@@ -1,0 +1,50 @@
+<div></div>
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav mode="side" fxFLex class="mat-elevation-z1">
+
+    <mat-list>
+
+      <mat-list-item *ngFor="let category of categories">
+        <button mat-button (click)="showNews(category,1)" class="fw">
+          <img class="centerCrop category-icon" [src]="getIcon(category)" alt=""> {{category}}
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content fxFLex>
+
+    <div fxLayout class="mar-l-8 mar-r-16">
+
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon *ngIf='categoryNavVisible'>chevron_left</mat-icon>
+        categories
+        <mat-icon *ngIf='!categoryNavVisible'>chevron_right</mat-icon>
+
+      </button>
+
+      <div fxFlex></div>
+      <h3 class="mar-4">{{selectedCategory }} </h3>
+    </div>
+    <div class="mar-l-8 pad-t-16 pad-r-16 ">
+      <div fxLayout="column">
+
+        <h2 *ngIf="posts$ &&  (posts$ | async)?.totalResults==0  ">no results</h2>
+
+        <app-post-cover-main class="mar-t-16" fxFlex *ngFor="let post of (posts$ | async)?.articles" [post]="post">
+        </app-post-cover-main>
+
+        <mat-card class="mar-t-16 no-pad mar-b-16" [hidden]="!posts$ || (posts$ | async)?.totalResults==0 ">
+          <mat-paginator (page)="change($event)" [length]="(posts$ | async)?.totalResults" [(pageSize)]="newsService.pagesize" [pageSizeOptions]="[10, 25,50, 100]">
+          </mat-paginator>
+        </mat-card>
+
+      </div>
+    </div>
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

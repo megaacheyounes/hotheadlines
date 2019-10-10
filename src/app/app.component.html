@@ -1,0 +1,14 @@
+<div fxFlexFill fxLayout="column">
+  <app-navbar [sidenav]="sidenav" class="top mat-elevation-z2 "></app-navbar>
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav #sidenav [mode]="mode" class="mat-elevation-z2">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>

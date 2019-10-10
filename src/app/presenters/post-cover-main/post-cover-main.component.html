@@ -1,0 +1,19 @@
+<mat-card fxLayout.lt-md="column" fxLayoutWrap class="no-pad" fxLayoutAlign="start center">
+  <img fxFlex.gt-md="40%" fxFlexFill (click)="postclicked()" [src]="post.urlToImage" alt="{{post.title}}"
+    class="centerCrop  clickable img ">
+
+  <div fxFLex.gt-md="60%" class="pad-16 mar-t-16">
+    <p>{{ post.source.name}} &bull; {{post.publishedAt | convertDate}} </p>
+
+    <p class="mat-display-1 no-mar clickable" (click)="postclicked()">{{post.title }}</p>
+    <p class="mat-h-5 mar-t-8">{{ post.description}} </p>
+    <div fxLayout fxLayoutAlign="end">
+      <button mat-button matTooltip="{{post.source.name}}" (click)="readMore()" color="primary">
+        read more
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+    </div>
+
+
+  </div>
+</mat-card>

@@ -1,0 +1,19 @@
+<mat-toolbar>
+
+  <mat-toolbar-row>
+
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <img (click)='home.click()' [src]="logo" class="logo clickable" alt="">
+    <a [hidden]='true' href='/trending' #home></a>
+    <div fxFlex></div>
+
+    <app-search-bar class="mar-l-16"></app-search-bar>
+
+  </mat-toolbar-row>
+
+  <mat-progress-bar class="absolute" fxFLexFill *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+</mat-toolbar>
