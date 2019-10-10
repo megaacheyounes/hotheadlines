@@ -1,4 +1,4 @@
-[Hot headlines](http://megaache-younes.herokuapp.com/)  
+[Hot headlines](http://hotheadlines.herokuapp.com/)  
 News Website built on top of the MEAN stack, powered by newsapi.org.    
 
 After cloning, Add your newsapi.org's api key to the environment file at src/environments 
